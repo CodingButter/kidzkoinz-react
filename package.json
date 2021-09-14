@@ -1,9 +1,10 @@
 {
   "name": "kidzkoinz-react",
-  "homepage" : "http://CodingButter.github.io/kidzkoinz-react",
+  "homepage": "http://CodingButter.github.io/kidzkoinz-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@storybook/storybook-deployer": "^2.8.10",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -14,14 +15,15 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "yarn workspace @availity/react-storybook start",
+    "start": "yarn workspace react-storybook start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
+    "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -s public",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "storybook": "start-storybook -p 6006 -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -29,6 +31,14 @@
       "react-app/jest"
     ],
     "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      },
       {
         "files": [
           "**/*.stories.*"
