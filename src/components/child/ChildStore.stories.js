@@ -1,9 +1,9 @@
 import React from "react";
 
-import Store from "./Store";
+import ChildStore from "./ChildStore";
 
 export default {
-  component: Store,
+  component: ChildStore,
   title: "Parent/Store",
 };
 
@@ -16,4 +16,4 @@ const storeProducts = [
     amazonPrime: "true",
   },
 ];
-export const Main = () => <Store storeProducts={storeProducts} />;
+export const Main = () => <ChildStore storeProducts={storeProducts} />;

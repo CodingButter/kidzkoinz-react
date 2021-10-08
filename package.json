@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "5.1.1",
+    "graphql": "^15.6.1",
     "react": "^17.0.2",
     "react-avatar": "^3.10.0",
     "react-bootstrap": "^2.0.0-rc.0",
@@ -56,6 +57,7 @@
     "@storybook/addon-links": "^6.3.8",
     "@storybook/node-logger": "^6.3.8",
     "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.8"
+    "@storybook/react": "^6.3.8",
+    "storybook-addon-apollo-client": "^4.0.9"
   }
 }

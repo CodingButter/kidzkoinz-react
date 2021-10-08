@@ -1,17 +1,55 @@
 import React from "react";
 
-import Profiles from "./Profiles";
+import { Profiles, getProfileQuery } from "./Profiles";
 
 export default {
   component: Profiles,
   title: "General/Profiles",
 };
+
+const setUserSelected = () => {
+  return null;
+};
+
 export const Main = () => (
-  <Profiles
-    users={[
-      { name: "Tanner", avatar: "Tanner" },
-      { name: "Jamie", avatar: "Jamie" },
-      { name: "John", avatar: "John Doe" },
-    ]}
-  />
+  <Profiles householdId={1} setUserSelected={setUserSelected} />
 );
+
+Main.parameters = {
+  apolloClient: {
+    mocks: [
+      {
+        request: {
+          query: getProfileQuery,
+          variables: { householdId: 1 },
+        },
+        result: {
+          data: {
+            household: {
+              parents: [
+                {
+                  firstname: "jamie",
+                  avatar: {
+                    image: {
+                      medium: "http://localhost:3080/images/avatars/man.png",
+                    },
+                  },
+                },
+              ],
+              children: [
+                {
+                  firstname: "andrew",
+                  avatar: {
+                    image: {
+                      medium: "http://localhost:3080/images/avatars/boy.png",
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+    ],
+  },
+};
