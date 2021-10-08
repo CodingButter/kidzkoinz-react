@@ -1,7 +1,7 @@
 import { Container, Table } from "react-bootstrap";
 import Avatar from "react-avatar";
 
-const Store = ({ storeProducts }) => {
+const ParentStore = ({ storeProducts }) => {
 
   const storeColumns = [
     "Image",
@@ -43,4 +43,4 @@ const Store = ({ storeProducts }) => {
   );
 };
 
-export default Store;
+export default ParentStore;
